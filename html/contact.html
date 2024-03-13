@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header section -->
+
+<header>
+
+    <div id="menu-bar" class="fas fa-bars">
+        
+    </div>
+
+    <a href="#" class="logo"><span>T</span>ech</a>
+
+    <nav class="navbar">
+        <a href="/html/home.html">home</a>
+        <a href="/html/news.html">news</a>
+        <a href="/html/products.html">products</a>
+        <a href="/html/about.html">about </a>
+        <a href="/html/contact.html">Contact us</a>
+    </nav>
+
+    <div class="icons">
+        <a href="/html/login.html">
+            <i class="fas fa-user" id="login-btn"></i>
+        </a>
+    </div>
+
+</header>
+
+<div id="contact-form">
+    
+    <form id="form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required placeholder="Enter your Name">
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required placeholder="Enter your Email">
+    
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" required placeholder="Write your questions here, We will respond you in a fast time"></textarea>
+    
+    <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+    </div>
+
+
+
+<script>
+function validateForm() {
+var name = document.getElementById("name").value;
+var email = document.getElementById("email").value;
+var message = document.getElementById("message").value;
+
+var nameRegex = /^[a-zA-Z ]+$/;
+var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if (!nameRegex.test(name)) {
+    alert("Please enter a valid name");
+    return;
+}
+
+if (!emailRegex.test(email)) {
+    alert("Please enter a valid email address");
+    return;
+}
+
+if (message.trim() === "") {
+    alert("Please enter a message");
+    return;
+}
+
+// If all validations pass, you can submit the form or perform other actions
+alert("Form submitted successfully!");
+// You may also use document.getElementById("form").submit() to submit the form
+}
+</script>
+
+
+</body>
+</html>
